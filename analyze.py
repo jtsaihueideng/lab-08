@@ -70,7 +70,7 @@ def main(start_time: float, file: pathlib.Path, show: bool) -> None:
     # Plot
     plt.subplot(212)
     # TODO: Plot the frequency spectrum as a subplot (make sure to include labels)
-    plt.plot(frq,sample_slice_fft)
+    plt.plot(frq,np.absolute(sample_slice_fft))
     plt.xlabel('Frequency')
     plt.ylabel('Amplitude')
 

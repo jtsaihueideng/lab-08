@@ -14,6 +14,18 @@ NUMBER_DIC = {}
 LOWER_FRQS = [697, 770, 852, 941]
 HIGHER_FRQS = [1209, 1336, 1477]
 FRQ_THRES = 20
+num = 1
+for i in range(len(LOWER_FRQS)):
+    for j in range(len(HIGHER_FRQS)):
+        NUMBER_DIC[(LOWER_FRQS[i],HIGHER_FRQS[j])] = num
+        if num == 9:
+            num = '*'
+        elif num =='*':
+            num = 0
+        elif num == 0:
+            num = '*':
+        else:
+            num = num + 1
 
 def get_max_frq(frq: Iterable[float], fft: Iterable[float]) -> float:
     """Returns the frequency with the highest amplitude in the given FFT array.
@@ -55,7 +67,9 @@ def get_peak_frqs(frq, fft):
     #TODO: implement an algorithm to find the two maximum values in a given array
 
     #get the high and low frequency by splitting it in the middle (1000Hz)
-
+    middle = frq.index(1000)
+    low_frq = frq[:1000]
+    high_frq = frq[1000:]
     #spliting the FFT to high and low frequencies
 
     return (get_max_frq(low_frq, low_frq_fft), get_max_frq(high_frq, high_frq_fft))
@@ -117,8 +131,10 @@ def main(file):
         sample_slice = samples[start_index:end_index] # get the sample slice
 
         #TODO: grab the sample slice and perform FFT on it
+        
 
         #TODO: truncate the FFT to 0 to 2000 Hz
+        
 
         #TODO: calculate the locations of the upper and lower FFT peak using get_peak_frqs()
 

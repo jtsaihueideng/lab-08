@@ -134,7 +134,7 @@ def main(file):
         sample_slice = samples[start_index:end_index] # get the sample slice
 
         #TODO: grab the sample slice and perform FFT on it
-        fft = np.fft.fft(sample_slice)/n
+        fft = np.fft.fft(sample_slice)
 
         #TODO: truncate the FFT to 0 to 2000 Hz
         fft = fft[range(max_frq_idx)]

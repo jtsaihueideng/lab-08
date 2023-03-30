@@ -23,7 +23,7 @@ for i in range(len(LOWER_FRQS)):
         elif num =='*':
             num = 0
         elif num == 0:
-            num = '*':
+            num = '*'
         else:
             num = num + 1
 

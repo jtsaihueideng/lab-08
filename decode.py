@@ -70,7 +70,10 @@ def get_peak_frqs(frq, fft):
     middle = frq.index(1000)
     low_frq = frq[:middle]
     high_frq = frq[middle:]
+    
     #spliting the FFT to high and low frequencies
+    low_frq_fft = frq[:middle]
+    high_frq_fft = frq[middle:]
 
     return (get_max_frq(low_frq, low_frq_fft), get_max_frq(high_frq, high_frq_fft))
 
@@ -137,6 +140,7 @@ def main(file):
         
 
         #TODO: calculate the locations of the upper and lower FFT peak using get_peak_frqs()
+        loc = get_peak_frqs()
 
         #TODO: print the values and find the number that corresponds to the numbers
 

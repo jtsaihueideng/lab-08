@@ -17,7 +17,7 @@ FRQ_THRES = 20
 num = 1
 for i in range(len(LOWER_FRQS)):
     for j in range(len(HIGHER_FRQS)):
-        NUMBER_DIC[(LOWER_FRQS[i],HIGHER_FRQS[j])] = num
+        NUMBER_DIC[(LOWER_FRQS[i],HIGHER_FRQS[j])] = str(num)
         if num == 9:
             num = '*'
         elif num =='*':
@@ -148,7 +148,7 @@ def main(file):
         #Incrementing the start and end window for FFT analysis
         start_index += int(WINDOW_SIZE*sample_rate)
         end_index = start_index + slice_sample_size
-        #output = output + str(NUMBER_DIC[loc])
+        output = output + get_number_from_frq(loc[0],loc[1])
 
     print("Program completed")
     print("Decoded input: " + str(output))

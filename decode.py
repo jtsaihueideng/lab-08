@@ -67,7 +67,7 @@ def get_peak_frqs(frq, fft):
     #TODO: implement an algorithm to find the two maximum values in a given array
 
     #get the high and low frequency by splitting it in the middle (1000Hz)
-    middle = frq.index(1000)
+    middle = len(frq)/2
     low_frq = frq[:middle]
     high_frq = frq[middle:]
     

@@ -134,15 +134,16 @@ def main(file):
         sample_slice = samples[start_index:end_index] # get the sample slice
 
         #TODO: grab the sample slice and perform FFT on it
-        
+        fft = np.fft.fft(sample_slice)/n
 
         #TODO: truncate the FFT to 0 to 2000 Hz
+        fft = fft[range(max_frq_idx)]
         
-
         #TODO: calculate the locations of the upper and lower FFT peak using get_peak_frqs()
-        loc = get_peak_frqs()
+        loc = get_peak_frqs(frq,fft)
 
         #TODO: print the values and find the number that corresponds to the numbers
+        print("Number: " + str(loc))
 
         #Incrementing the start and end window for FFT analysis
         start_index += int(WINDOW_SIZE*sample_rate)

@@ -148,7 +148,7 @@ def main(file):
         #Incrementing the start and end window for FFT analysis
         start_index += int(WINDOW_SIZE*sample_rate)
         end_index = start_index + slice_sample_size
-        output = output + str(NUMBER_DIC[loc])
+        #output = output + str(NUMBER_DIC[loc])
 
     print("Program completed")
     print("Decoded input: " + str(output))

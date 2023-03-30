@@ -143,7 +143,7 @@ def main(file):
         loc = get_peak_frqs(frq,fft)
 
         #TODO: print the values and find the number that corresponds to the numbers
-        print("Number: " + str(loc)
+        print("Number: " + str(loc))
 
         #Incrementing the start and end window for FFT analysis
         start_index += int(WINDOW_SIZE*sample_rate)

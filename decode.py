@@ -72,8 +72,8 @@ def get_peak_frqs(frq, fft):
     high_frq = frq[middle:]
     
     #spliting the FFT to high and low frequencies
-    low_frq_fft = frq[:middle]
-    high_frq_fft = frq[middle:]
+    low_frq_fft = fft[:middle]
+    high_frq_fft = fft[middle:]
 
     return (get_max_frq(low_frq, low_frq_fft), get_max_frq(high_frq, high_frq_fft))
 
